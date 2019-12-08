@@ -1,0 +1,60 @@
+<div class="jumbotron image">
+    <div class="container" style="margin-bottom: 40px;">
+
+        <form [formGroup]="Changepwd" novalidate>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <div class="card image">
+                        <h1 style="text-align: center;"><u><b>Change Password</b></u></h1>
+                        <div class="row">
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10" style="margin-left: 10px;">
+                                <div class="form-group">
+                                    <input type="password" formControlName="Password" placeholder="Old Password"
+                                        class="form-control" style="margin-top: 20px;">
+                                    <div class="validations" *ngIf="Changepwd.controls['ConfirmPassword'].hasError('required') 
+                    && (Changepwd.controls['ConfirmPassword'].touched || Changepwd.controls['ConfirmPassword'].dirty)">
+                                        This field is required.
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" placeholder="New Password" class="form-control"
+                                        formControlName="NewPassword">
+                                    <div class="validations" *ngIf="Changepwd.controls['Password'].hasError('required') 
+                            && (Changepwd.controls['Password'].touched || Changepwd.controls['Password'].dirty)">
+                                        This field is required
+                                    </div>
+                                    <div class="validations" *ngIf="Changepwd.controls['Password'].hasError('pattern')">
+                                        Password should be in between 8 to 15 characters.
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" placeholder="Confirm Password" compare="NewPassword"
+                                        class="form-control" formControlName="ConfirmPassword">
+                                    <div class="validations" *ngIf="Changepwd.controls['ConfirmPassword'].hasError('required') 
+                    && (Changepwd.controls['ConfirmPassword'].touched || Changepwd.controls['ConfirmPassword'].dirty)">
+                                        This field is required.
+                                    </div>
+                                    <div class="validations" style="margin-bottom: 30px;"
+                                        *ngIf="Changepwd.controls['ConfirmPassword'].hasError('compare')">
+                                        Confirm Password do not match</div>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" (click)="OldPassword(Changepwd.value)"
+                                    class="btn btn-primary btn-large" style="margin-left: 100px;">Submit</button>
+                                <button type="reset" class="btn btn-danger btn-large"
+                                    style="margin-left: 40px;">Cancel</button>
+                                <!-- </div> -->
+                            </div>
+                            <div class="col-md-2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </form>
+    </div>
+</div>

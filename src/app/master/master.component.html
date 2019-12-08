@@ -1,0 +1,39 @@
+<br><br><br><h1 style="text-align: right" class="threeD"><b><i>Welcome to CarSparc</i></b></h1>
+
+<nav class="navbar navbar-expand bg-dark navbar-dark justify-content-center">
+
+    <ul class="navbar-nav">
+        <a class="img_logo" src="assets/Images/large2_new.png" width="70px" height="50px" href="#"></a>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/master/home" target="_self">Home</a>
+        </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link" routerLink="booking" target="_self">Nearest Bookings</a>
+    
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" routerLink="edit" target="_self">Edit Profile</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" routerLink="changepwd" target="_self">Change Password</a>
+        </li>
+
+        <li class="nav-item">
+                <a class="nav-link" routerLink="admin" target="_self">Admin</a>
+        </li>
+
+        <li class="nav-item">
+                <a  class="nav-link" routerLink="/master/home"  class="nav-link dropdown-toggle" data-toggle="dropdown" target="_self">Account</a>
+                <div class="dropdown-menu" style="margin-left: 910px;">
+                    <button class="btn btn-info" (click)="removedata()" style="scroll-margin-block-end: 500;" routerLink="" class="dropdown-item" style="width: 10px;">LogOut</button>
+                </div>
+            </li>
+    </ul>
+
+</nav>
+<router-outlet></router-outlet>
+<!-- <app-home></app-home> -->
